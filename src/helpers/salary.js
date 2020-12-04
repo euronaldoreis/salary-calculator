@@ -93,11 +93,15 @@ function calculateSalaryFrom(fullSalary) {
 
   const netSalary = fullSalary - discountINSS - discountIRPF;
 
+  const SalaryDiscount = fullSalary - netSalary;
+
   const percentINSS = ((discountINSS / fullSalary) * 100).toFixed(2);
 
   const percentIRPF = ((discountIRPF / fullSalary) * 100).toFixed(2);
 
   const percentNetSalary = ((netSalary / fullSalary) * 100).toFixed(2);
+
+  const percentSalaryDiscount = ((SalaryDiscount / fullSalary) * 100).toFixed(2);
 
   return {
     baseINSS,
@@ -105,9 +109,11 @@ function calculateSalaryFrom(fullSalary) {
     baseIRPF,
     discountIRPF,
     netSalary,
+    SalaryDiscount,
     percentINSS,
     percentIRPF,
     percentNetSalary,
+    percentSalaryDiscount,
   };
 }
 

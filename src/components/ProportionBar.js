@@ -17,6 +17,7 @@ export default class ProportionBar extends Component {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'flex-start',
+          paddingBottom: '20px',
         }}
       >
         <div

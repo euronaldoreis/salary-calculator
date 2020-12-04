@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import InputFullSalary from './components/InputFullSalary';
+import React, { Component } from "react";
+import InputFullSalary from "./components/InputFullSalary";
 
-import InputReadOnly from './components/InputReadOnly';
+import InputReadOnly from "./components/InputReadOnly";
 
-import { calculateSalaryFrom } from './helpers/salary';
-import ProportionBar from './components/ProportionBar';
+import { calculateSalaryFrom } from "./helpers/salary";
+import ProportionBar from "./components/ProportionBar";
 
-import css from './components/header.module.css';
+import css from "./components/header.module.css";
 
-const COLOR_INSS = '#e67e22';
-const COLOR_IRPF = '#c0392b';
-const COLOR_NET_SALARY = '#16a085';
+const COLOR_INSS = "#e67e22";
+const COLOR_IRPF = "#c0392b";
+const COLOR_NET_SALARY = "#16a085";
 
 export default class App extends Component {
   constructor() {
@@ -36,15 +36,27 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
+      SalaryDiscount,
       percentINSS,
       percentIRPF,
       percentNetSalary,
+      percentSalaryDiscount,
     } = salaryObject;
 
     return (
       <>
         <div className={css.sidebar}>
           <h3>Calcular Salário</h3>
+          <p>
+            Criado por{" "}
+            <a
+              href="http://github.com/euronaldoreis"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ronaldo Reis
+            </a>
+          </p>
         </div>
         <div className="container">
           <div className="row">
@@ -69,6 +81,12 @@ export default class App extends Component {
               color={COLOR_IRPF}
             />
             <InputReadOnly
+              label="Total descontado"
+              value={SalaryDiscount}
+              color={COLOR_IRPF}
+              percentage={percentSalaryDiscount}
+            />
+            <InputReadOnly
               label="Salário líquido"
               value={netSalary}
               percentage={percentNetSalary}
@@ -84,7 +102,6 @@ export default class App extends Component {
             colorNetSalary={COLOR_NET_SALARY}
           />
         </div>
-        <div className={css.footer}>Criado por Ronaldo Reis</div>
       </>
     );
   }

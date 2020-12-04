@@ -1,8 +1,9 @@
 .sidebar {
   background-color: lightseagreen;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 5px;
   margin-bottom: 30px;
 }
@@ -13,12 +14,11 @@
   font-size: 26px;
 }
 
-.footer {
-  background-color: #000;
+.sidebar p {
   color: #fff;
-  padding: 5px;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  font-weight: 700;
+}
+
+.sidebar a {
+  color: blue;
 }
